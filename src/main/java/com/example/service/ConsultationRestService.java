@@ -18,14 +18,25 @@ public class ConsultationRestService {
 	
 	@Autowired
 	private ConsultationMetier ConsultationMetier;
+	
 	@PostMapping(value ="/consultation")
-	public Consultation saveEtatCivili(@RequestBody Consultation consult) {
+	public Consultation saveConsultation(Consultation consult) {
 		return ConsultationMetier.saveConsultation(consult);
 	}
-	@GetMapping(value ="/consultation" )
-	public List<Consultation> listEtatCivil() {
+	
+	@GetMapping(value ="/consultation")
+	public List<Consultation> listConsultation() {
 		return ConsultationMetier.listConsultation();
 	}
+	
+	/*
+	 * @PostMapping(value ="/consultation") public Consultation
+	 * saveEtatCivili(@RequestBody Consultation consult) { return
+	 * ConsultationMetier.saveConsultation(consult); }
+	 * 
+	 * @GetMapping(value ="/consultation" ) public List<Consultation>
+	 * listEtatCivil() { return ConsultationMetier.listConsultation(); }
+	 */
 	
 
 }
